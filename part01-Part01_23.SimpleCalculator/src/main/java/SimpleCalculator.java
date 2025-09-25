@@ -22,7 +22,7 @@ public class SimpleCalculator {
         int multiplication = firstNumber * secondNumber;
         System.out.println(firstNumber + " * " + secondNumber + " = " + multiplication);
 
-        double division = 1.0*(firstNumber / secondNumber);
+        double division = ((1.0 * firstNumber) / (1.0*secondNumber));
         System.out.println(firstNumber + " / " + secondNumber + " = " + division);
     }
 }
