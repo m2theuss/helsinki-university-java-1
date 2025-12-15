@@ -10,5 +10,22 @@ public class PersonalInformationCollection {
         ArrayList<PersonalInformation> infoCollection = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
+        while(true){
+            System.out.print("First name: ");
+            String name = scanner.nextLine();
+            if(name.isEmpty()){
+                break;
+            }
+            System.out.print("Last name: ");
+            String lastName = scanner.nextLine();
+
+            System.out.print("Identification number: ");
+            String indentNumber = scanner.nextLine();
+
+            infoCollection.add(new PersonalInformation(name,lastName,indentNumber));
+        }
+        for(PersonalInformation person : infoCollection){
+            System.out.println(person.getFirstName() + " " + person.getLastName());
+        }
     }
 }
