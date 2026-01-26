@@ -35,7 +35,7 @@ public class PaymentTerminal {
         if(payment < minValueMeal){
             return payment;
         }else{
-            this.affordableMeals++;
+            this.heartyMeals++;
             this.money += minValueMeal;
             return payment - minValueMeal;
         }
@@ -46,6 +46,7 @@ public class PaymentTerminal {
         double minValueMeal = 2.50;
         // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
         if(card.balance() >= minValueMeal){
+            this.affordableMeals++;
             card.takeMoney(minValueMeal);
             return true;
         }
@@ -59,6 +60,7 @@ public class PaymentTerminal {
 
         // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
         if(card.balance() >= minValueMeal){
+            this.heartyMeals++;
             card.takeMoney(minValueMeal);
             return true;
         }
@@ -68,7 +70,10 @@ public class PaymentTerminal {
 
     }
     public void addMoneyToCard(PaymentCard card, double sum) {
-        card.addMoney(sum);
+        if(sum >= 0){
+            this.money += sum;
+            card.addMoney(sum);
+        }
     }
     @Override
     public String toString() {
