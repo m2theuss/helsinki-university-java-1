@@ -19,6 +19,9 @@ public class Statistics {
         return this.sum;
     }
     public double average(){
-        return Double.valueOf(this.sum / this.count);
+        if(this.sum == 0 || this.count == 0){
+            return 0;
+        }
+        return (double)this.sum / (double)this.count;
     }
 }

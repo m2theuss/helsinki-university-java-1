@@ -7,6 +7,14 @@ public class Archive{
         this.identifier = identifier;
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public String getIdentifier(){
+        return identifier;
+    }
+
     @Override
     public boolean equals(Object obj){
         if(this == obj){
@@ -17,9 +25,9 @@ public class Archive{
         }
         Archive compared = (Archive)obj;
 
-        if(name.equals(compared.name)
-            && identifier.equals(compared.identifier)) {
+        if( identifier.equals(compared.identifier)) {
             return true;
         }   
+        return false;
     }
 }

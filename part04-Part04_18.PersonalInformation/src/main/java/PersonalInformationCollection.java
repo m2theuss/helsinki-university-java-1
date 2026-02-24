@@ -14,6 +14,7 @@ public class PersonalInformationCollection {
             System.out.print("First name: ");
             String name = scanner.nextLine();
             if(name.isEmpty()){
+                System.out.println(" ");
                 break;
             }
             System.out.print("Last name: ");

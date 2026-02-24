@@ -13,17 +13,17 @@ public class RecordsFromAFile {
                 String line = file.nextLine();
 
                 String[] values = line.split(",");
-                int number = Integer.valueOf(values[values.length - 1]);
+                int number = Integer.valueOf(values[values.length -1]);
 
                 System.out.print(values[0] + ", ");
-                if(number > 1){
+                if(!(number == 1)){
                     System.out.println("age: " + values[values.length - 1] + " years");
                 }else{
                     System.out.println("age: " + values[values.length - 1] + " year");
                 }
             }
         }catch(Exception e){
-            System.out.println(e.getMessage());
+                System.out.println("A error ocorred: " + e.getMessage());
         }
     }
 }
