@@ -48,15 +48,19 @@ public class Money {
     }
     public Money minus(Money decrease){
         double tmpDecrease = (double)decrease.euros + ((double)decrease.cents / 100.0);
+
         double totalThis = (double)euros + ((double)cents / 100.0);
 
-        double totalDecrease = totalThis - tmpDecrease;
-        double newCents = totalDecrease % 1;
+        double totalDecrease = Math.round((totalThis - tmpDecrease)* 10.0) / 10.0;
+
+        double newCents = Math.round((totalDecrease % 1)* 10.0) / 10.0;
+        
         double newEuros = totalDecrease - newCents;
+
         if(totalDecrease < 0){
             return new Money(0,0);
         }
-        return new Money((int)newEuros, (int)Math.round(newCents));
+        return new Money((int)newEuros, (int)(newCents * 100));
 
     }
     
