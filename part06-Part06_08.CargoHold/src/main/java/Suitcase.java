@@ -44,4 +44,16 @@ public class Suitcase{
         }
         return total;
     }
+    public Item heaviestItem(){
+        if(items.isEmpty()){
+            return null;
+        }
+        Item heaviestTmp = items.get(0);
+        for(Item item : items){
+            if(item.getWeight() > heaviestTmp.getWeight()){
+                heaviestTmp = item;
+            }
+        }
+        return heaviestTmp;
+    }
 }
