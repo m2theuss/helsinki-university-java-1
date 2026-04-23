@@ -1,21 +1,34 @@
 import java.util.ArrayList;
 public class ExerciseManagement {
-    private ArrayList<String> list;
+    private ArrayList<Exercise> exercisesList;
 
     public ExerciseManagement(){
-        this.list = new ArrayList<>();
+        this.exercisesList = new ArrayList<>();
     }
 
-    public ArrayList<String> exerciseList(){
-        return this.list;
+    public ArrayList<String> exercisesList(){
+        ArrayList<String> list = new ArrayList<>();
+        for(Exercise item : exercisesList){
+            list.add(item.getName());
+        }
+        return list;
     }
     public void add(String value){
-        this.list.add(value);
+        this.exercisesList.add(new Exercise(value));
     }
-    public void markAsCompleted(String exercice){
-
+    public void markAsCompleted(String exercise){
+        for(Exercise item : exercisesList){
+            if(item.getName().equals(exercise)){
+                item.setCompleted(true);
+            }
+        }
     }
-    public boolean isCompleted(String exercice){
-        return true;
+    public boolean isCompleted(String exercise){
+        for(Exercise item : exercisesList){
+            if(item.getName().equals(exercise)){
+                return item.isCompleted();
+            }
+        }
+        return false;
     }
 }
