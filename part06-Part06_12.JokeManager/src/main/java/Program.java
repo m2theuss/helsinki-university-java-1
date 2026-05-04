@@ -7,7 +7,7 @@ public class Program {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList < String > jokes = new ArrayList < > ();
+        ArrayList <String> jokes = new ArrayList <> ();
         System.out.println("What a joke!");
         while (true) {
             System.out.println("Commands:");
