@@ -24,4 +24,7 @@ public class Recipe{
     public int getCookingTime(){
         return this.cookingTime;
     }
+    public ArrayList<String> getIngredients(){
+        return ingredients;
+    }
 }
